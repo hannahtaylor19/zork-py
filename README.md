@@ -3,6 +3,8 @@
 #Python Lab Extra Credit 
 EXTRA ROOM: Basement 
 The custom room is a basement under the kitchen.In the room you can open up the door, go through the door, go up the staircase, and pick up the lantern. 
+1.) I attempted part A and part B of the extra credit and I believe I successfully attempted them
+2.) The challenges I faced was understanding what the instructions wanted me to do, I had to read through them a couple of times before I understood them
 # Zork.py
 
 Thank you for downloading a copy of Zork, The PY Edition!
