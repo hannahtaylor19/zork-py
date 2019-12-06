@@ -60,6 +60,65 @@ while True:
             list_list=zork.EndRoom(last_inp)
             loop=list_list[0]
             print('You are in the ' + list_list[0] + ', and you are ' + list_list[1])
-
+    while loop=='Back of House':
+        if loop=='Back of House':
+            print("---------------------------------------------------------")
+            print('You find yourself on the back side of the white house')
+            print('West of where you are there is a old worn down window')
+            house_imp=input("What do you do ")
+            list_list=zork.BackofHouseRoom(house_imp)
+            loop=list_list[0]
+            print('You are in the ' + list_list[0] + ', and you are ' + list_list[1])
+    while loop=='Kitchen':
+        if loop=='Kitchen':
+            print("---------------------------------------------------------")
+            print('You find yourself in a dimly lit kitchen with dust covering the floor.')
+            print('A lantern rests on the kitchen island and there is a staircase leading downstairs.')
+            print('A set of stairs leads up to another room.')
+            kitchen_imp=input("What do you do ")
+            list_list=zork.Kitchen(kitchen_imp)
+            loop=list_list[0]
+            print('You are in the ' + list_list[0] + ', and you are ' + list_list[1])
+    while loop=='Attic':
+        if loop=='Attic':
+            print("---------------------------------------------------------")
+            print('You are now in a dimley lit attic space filled with cob webs')
+            print('There is a small table with a book on the table')
+            attic_imp=input("What do you do ")
+            list_list=zork.Attic(attic_imp)
+            loop=list_list[0]
+            print('You are in the ' + list_list[0] + ', and you are ' + list_list[1])
+    while loop=='Maze Entrance':
+        if loop=='Maze Entrance':
+            print("---------------------------------------------------------")
+            print("This is the entrance to a maze. The maze is made up of large green hedges'")
+            print("North you see a what looks like a cave")
+            print("Looking South you see more maze and more darkness")
+            maze_imp=input("What do you do ")
+            list_list=zork.MazeEntrance(maze_imp)
+            loop=list_list[0]
+            print('You are in the ' + list_list[0] + ', and you are ' + list_list[1])
+    while loop=='Maze Interior':
+        if loop=='Maze Interior':
+            print("---------------------------------------------------------")
+            print("You are now in the maze")
+            print('You can barley see anything and it looks like the maze keeps getting darker')
+            mazeent_imp=input("What do you do ")
+            list_list=zork.MazeInterior(mazeent_imp)
+            loop=list_list[0]
+            print('You are in the ' + list_list[0] + ', and you are ' + list_list[1])
+    while loop=='Basement':
+        if loop=='Basement':
+            print("---------------------------------------------------------")
+            print('You are in a small dark room')
+            print("The staircase you came down are to your right and a lantern in the middle of the room")
+            print("There is a door across the room")
+            basement_imp=input("What do you do ")
+            list_list=zork.Basement(basement_imp)
+            loop=list_list[0]
+            print('You are in the ' + list_list[0] + ', and you are ' + list_list[1])
+            
+            
     
+
 

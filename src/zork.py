@@ -12,10 +12,8 @@ def Room0(second):
                 loop='Start Room'
         elif second.lower() == ("go north"):
                 loop = 'North Room'
-        elif second.lower() == ("open door"):
-                print("---------------------------------------------------------")
-                print("The door cannot be opened.")
-                loop='Start Room'
+        elif second.lower() == ("go east"):
+                loop='Back of House'
         elif second.lower() == ("take boards"):
                 print("---------------------------------------------------------")
                 print("The boards are securely fastened.")
@@ -44,6 +42,44 @@ def Room0(second):
                 print("---------------------------------------------------------")
                 loop='Start Room'
         return [loop,status]
+def Basement(basement_imp):
+        status='alive'
+        if basement_imp.lower()==('go up staircase'):
+                loop='Kitchen'
+        elif basement_imp.lower()==('go up stairs'):
+                loop='Kitchen'
+        elif basement_imp.lower()==('open door'):
+                loop='Maze Interior'
+        elif basement_imp.lower()==('go through door'):
+                loop='Maze Interior' 
+        elif basement_imp.lower()==('go up'):
+                loop='Kitchen' 
+        elif basement_imp.lower()==('pick up lantern'):
+                print("---------------------------------------------------------")
+                print("Let's go camping! Just kidding, you are looking for someone.. focus!")
+                loop='Basement'
+        elif basement_imp.lower()==('throw lantern'):
+                print("---------------------------------------------------------")
+                print("Yes, go ahead break everything why don't ya")
+                loop='Basement'
+        elif basement_imp.lower()==('smash lantern'):
+                print("---------------------------------------------------------")
+                print("Ah yes are you the newest member of the WWE? I did not think so")
+                loop='Basement'
+        elif basement_imp.lower() == ("kick the bucket"):
+                print("---------------------------------------------------------")
+                print("You die.")
+                print("---------------------------------------------------------")
+                status='dead'
+                dead_inp = input("Do you want to continue? Y/N ")
+                if dead_inp.lower() == ("n"):
+                        exit()
+                if dead_inp.lower() == ("y"):
+                        loop='Start Room'
+        else:
+                print("---------------------------------------------------------")
+                loop='Basement'
+        
 def NorthRoom(north_house_inp):
         status='alive'
         if north_house_inp.lower() == ("go south"):
@@ -66,10 +102,154 @@ def NorthRoom(north_house_inp):
                         exit()
                 if dead_inp.lower() == ("y"):
                         loop='Start Room'
-                else:
-                        print("---------------------------------------------------------")
-                        loop='North Room'
+        else:
+                print("---------------------------------------------------------")
+                loop='North Room'
         return [loop,status]
+def BackofHouseRoom(house_imp):
+        status='alive'
+        if house_imp.lower()==("go south"):
+                loop='Maze Entrance'
+        elif house_imp.lower()==("go west"):
+                print("---------------------------------------------------------")
+                print("Opening a rickety window you climb into the  house")
+                loop='Kitchen'
+        elif house_imp.lower()==("kick the bucket"):
+                print("---------------------------------------------------------")
+                print("You die.")
+                print("---------------------------------------------------------")
+                status='dead'
+                dead_inp = input("Do you want to continue? Y/N ")
+                if dead_inp.lower() == ("n"):
+                        exit()
+                if dead_inp.lower() == ("y"):
+                        loop='Start Room'
+        else:
+                print("---------------------------------------------------------")
+                loop='Kitchen'
+        return [loop,status]
+def Kitchen(kitchen_imp):
+        status='alive'
+        if kitchen_imp.lower()==('go up stairs'):
+                loop='Attic'
+        elif kitchen_imp.lower()==('go up'):
+             loop='Attic'
+        elif kitchen_imp.lower()==('go east'):
+                loop='Back of House'
+        elif kitchen_imp.lower()==('go down staircase'):
+                loop='Basement'
+        elif kitchen_imp.lower()==('go down'):
+                loop='Basement'
+        elif kitchen_imp.lower()==('pick up lantern'):
+                print("---------------------------------------------------------")
+                print('We are not going camping??')
+                loop='Kitchen'
+        elif kitchen_imp.lower()==('break lantern'):
+                print("---------------------------------------------------------")
+                print('But why? Like really why?')
+                loop='Kitchen'
+        elif kitchen_imp.lower()==('smash lantern'):
+                print("---------------------------------------------------------")
+                print('You are not the Hulk, okay?')
+                loop='Kitchen'
+        elif kitchen_imp.lower()==("kick the bucket"):
+                print("---------------------------------------------------------")
+                print("You die.")
+                print("---------------------------------------------------------")
+                status='dead'
+                dead_inp = input("Do you want to continue? Y/N ")
+                if dead_inp.lower() == ("n"):
+                        exit()
+                if dead_inp.lower() == ("y"):
+                        loop='Start Room'
+        else:
+                print("---------------------------------------------------------")
+                loop='Kitchen'
+        return [loop,status]
+def Attic(attic_imp):
+        status='alive'
+        if attic_imp.lower()==('go down'):
+                loop='Kitchen'
+        elif attic_imp.lower()==('go down stairs'):
+                loop='Kitchen'
+        elif attic_imp.lower()==('go down staircase'):
+                loop='Kitchen'
+        elif attic_imp.lower()==('pick up book'):
+                print("---------------------------------------------------------")
+                print('Um we are not in English class')
+                loop='Attic'
+        elif attic_imp.lower()==('throw book'):
+                print("---------------------------------------------------------")
+                print('So what was the point of that?')
+                loop='Attic'
+        elif attic_imp.lower()==('open book'):
+                print("---------------------------------------------------------")
+                print('Welcome to the Unofficial Python Version of Zork. Your mission is to find a Jade Statue.')
+                loop='Attic'
+        elif attic_imp()==("kick the bucket"):
+                print("---------------------------------------------------------")
+                print("You die.")
+                print("---------------------------------------------------------")
+                status='dead'
+                dead_inp = input("Do you want to continue? Y/N ")
+                if dead_inp.lower() == ("n"):
+                        exit()
+                if dead_inp.lower() == ("y"):
+                        loop='Start Room'
+        else:
+                print("---------------------------------------------------------")
+                loop='Attic'
+        return [loop,status]
+def MazeEntrance(maze_imp):
+        status-'alive'
+        if maze_imp.lower()==('go north'):
+                loop='Cave Room'
+        elif maze_imp.lower()==('go south'):
+                loop='Maze Interior'
+        elif maze_imp.lower()==('look at maze'):
+                print("---------------------------------------------------------")
+                print('The maze is made out of a drak evergreen bush')
+                print('Ivy vines run through the bushses. Darkness seems to come from the maze')
+                loop='Maze Enterance'
+        elif maze_imp.lower()==('go west'):
+                print("---------------------------------------------------------")
+                print('A flooded river blocks your path and you are forced to turn around')
+                loop='Maze Enterance'
+        elif maze_imp.lower()==('go into maze'):
+                loop='Maze Interior'
+        elif maze_imp.lower()==('enter maze'):
+                loop='Maze Interior'
+        elif maze_imp.lower()==("kick the bucket"):
+                print("---------------------------------------------------------")
+                print("You die.")
+                print("---------------------------------------------------------")
+                status='dead'
+                dead_inp = input("Do you want to continue? Y/N ")
+                if dead_inp.lower() == ("n"):
+                        exit()
+                if dead_inp.lower() == ("y"):
+                        loop='Start Room'
+        else:
+                print("---------------------------------------------------------")
+                loop='Maze Enterance'
+        return [loop,status]
+        
+def MazeInterior(mazeent_imp):
+        status='alive'
+        if mazeent_imp.lower()==('go north'):
+                loop='Maze Entrance'
+        else:
+                print("---------------------------------------------------------")
+                print("The grue attacks and eats you")
+                print("You die")
+                status='dead'
+                dead_inp = input("Do you want to continue? Y/N ")
+                if dead_inp.lower() == ("n"):
+                        exit()
+                if dead_inp.lower() == ("y"):
+                        loop='Start Room'
+        return [loop,status]
+        
 def SouthwestRoom(forest_inp):
         status='alive'
         if forest_inp.lower() == ("go west"):
@@ -147,6 +327,8 @@ def CaveRoom(cave_inp):
                 loop ='End Room'
         elif cave_inp.lower() == ("scale staircase"):
                 loop ='End Room'
+        elif cave_inp.lower()==("go south"):
+                loop='Maze Enterance'
         elif cave_inp.lower() == ("kick the bucket"):
                 print("---------------------------------------------------------")
                 print("You die.")
